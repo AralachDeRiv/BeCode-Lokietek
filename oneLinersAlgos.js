@@ -23,7 +23,9 @@ const occurencies = (word, letter) =>
 const onlyPositives = (array) =>
   array.filter((x) => x >= 0).reduce((a, x) => a + x);
 
-const scanAndFind = (arrayObj, obj) =>
-  arrayObj.filter(
+    const scanAndFind = (arrayObj, obj) => arrayObj.filter(
     (x) => x[Object.entries(obj)[0][0]] == Object.entries(obj)[0][1]
   );
+
+
+

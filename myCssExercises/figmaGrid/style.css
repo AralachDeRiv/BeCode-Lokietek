@@ -67,7 +67,7 @@ main {
   background-color: #232323;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .image-A {

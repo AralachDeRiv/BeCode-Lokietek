@@ -16,10 +16,5 @@ Array.from(
   element.firstElementChild.style.color = "green";
 });
 
-console.log(
-  bold.parentElement.parentElement.parentElement.parentElement.firstElementChild
-    .firstElementChild.firstElementChild
-);
-
 bold.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.style.cssText =
   "text-transform: uppercase";

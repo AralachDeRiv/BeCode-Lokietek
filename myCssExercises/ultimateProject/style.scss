@@ -1,29 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/*Reset*/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: #ffff;
-}
-
-li {
-  list-style: none;
-}
-
-/*Style*/
+@import "./sass/reset";
+@import "./sass/mixins";
+@import "./sass/colors.scss";
 
 %logo {
   p {
@@ -31,50 +10,62 @@ li {
     font-family: Barlow;
     font-size: 2rem;
     font-weight: 800;
-    line-height: 2.4rem;
+    white-space: nowrap;
 
     span {
-      color: #e6606c;
+      color: $rose;
     }
   }
 }
 
-body {
-  color: #ffff;
-  padding: 1.9rem 7.5rem 4.75rem;
-  background: linear-gradient(236.56deg, #2c2d65 0.35%, #201f22 100%);
-  position: relative;
+/*Style*/
 
+body {
+  max-width: 1170px;
+  color: $white;
+  margin: 0 auto;
+  padding: 30px 10px;
+  background: $background-color;
+  position: relative;
   .deco1 {
     position: absolute;
     overflow: hidden;
     width: 33vw;
     left: 75%;
     top: -10%;
+    z-index: -1;
   }
 }
 
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10rem;
 
   @extend %logo;
 
-  nav > ul {
+  nav {
+    min-width: 25vw;
+  }
+
+  nav ul {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    max-width: 350px;
+    justify-content: space-between;
+    gap: 15px;
 
     li {
       & > a {
         font-family: Barlow;
         font-size: 0.8rem;
         font-weight: 400;
+        color: $white;
+        @include transition;
 
         &:hover {
-          color: #2c2d65;
+          color: #652c4f;
         }
       }
     }

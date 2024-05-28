@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Click the buttons</h1>
+
+    <button>Hello</button>
+    <button>Goodbye</button>
+    <script>
+      const btnH = document.querySelector("button");
+      const btnG = btnH.nextElementSibling;
+      btnH.addEventListener("click", () =>
+        window.alert("Oh my God ! You again !!!")
+      );
+      btnG.addEventListener("click", () =>
+        window.alert("Thank God ! I thought you'd' never leave !")
+      );
+    </script>
+  </body>
+</html>

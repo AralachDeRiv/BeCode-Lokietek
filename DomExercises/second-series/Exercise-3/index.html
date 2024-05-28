@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate color</title>
+  </head>
+  <body>
+    <h1>Placeholder</h1>
+    <button>Generate color</button>
+    <script>
+      const bodyElement = document.querySelector("body");
+      const h1Element = document.querySelector("h1");
+      const btn = document.querySelector("button");
+      const randomN = () => Math.floor(Math.random() * 256);
+      const changeColor = () => `rgb(${randomN()}, ${randomN()}, ${randomN()})`;
+      btn.addEventListener("click", () => {
+        let backgroundColor = changeColor();
+        h1Element.innerText = backgroundColor;
+        bodyElement.style.backgroundColor = backgroundColor;
+      });
+    </script>
+  </body>
+</html>

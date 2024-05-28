@@ -1,9 +1,16 @@
+$ipad: 768px;
+@mixin ipad() {
+  @media screen and (min-width: $ipad) {
+    @content;
+  }
+}
+
 @mixin transition {
   transition: all 0.5s ease;
 }
 
 @mixin pseudo {
-  content: "";
+  content: " ";
   display: block;
   position: absolute;
 }

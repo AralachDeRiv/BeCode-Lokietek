@@ -39,34 +39,188 @@ body {
 
 header {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10rem;
 
   @extend %logo;
 
-  nav {
-    min-width: 25vw;
+  input {
+    display: none;
   }
 
-  nav ul {
-    width: 100%;
+  label {
+    right: 20px;
+    position: relative;
+    z-index: 9999999;
+  }
+
+  .hamburger {
+    max-width: 40px;
+  }
+
+  input:checked ~ ul {
+    right: 0;
+  }
+
+  ul {
+    position: relative;
+    z-index: 999998;
+    background-color: $white;
+    li > a {
+      font-family: Barlow;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $yellow;
+      @include transition;
+      &:hover {
+        color: darken($yellow, 20%);
+      }
+    }
+
+    @include transition;
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -70vw;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @include ipad {
     justify-content: space-between;
-    gap: 15px;
 
-    li {
-      & > a {
-        font-family: Barlow;
-        font-size: 0.8rem;
-        font-weight: 400;
-        color: $white;
-        @include transition;
+    label,
+    input {
+      display: none;
+    }
+    ul {
+      width: 45vw;
+      background-color: transparent;
+      all: unset;
 
-        &:hover {
-          color: #652c4f;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      li {
+        & > a {
+          color: $white;
+          @include transition;
+
+          &:hover {
+            color: #652c4f;
+          }
         }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    max-width: 503px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin-bottom: 246px;
+
+    position: relative;
+    &::after {
+      @include pseudo;
+      content: url("./img/deco3.png");
+      top: -15%;
+      left: -20px;
+    }
+
+    &::before {
+      @include pseudo;
+      content: url("./img/deco2.png");
+      bottom: -25%;
+      right: 0;
+    }
+
+    h1 {
+      display: block;
+      font-family: Barlow;
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 76.8px;
+      letter-spacing: 0.045em;
+    }
+
+    .subtitle > p {
+      font-family: Barlow;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 38.4px;
+      letter-spacing: 0.045em;
+      color: $yellow;
+    }
+
+    p {
+      display: block;
+      font-family: Barlow;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+      letter-spacing: 0.045em;
+      max-width: 406px;
+    }
+
+    .btns {
+      max-width: 330px;
+      display: flex;
+      justify-content: space-between;
+
+      .btn {
+        display: flex;
+        width: 152px;
+        height: 43px;
+        border-radius: 75px;
+        padding: 13px 30px;
+        @include transition;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        &:hover {
+          box-shadow: 0px 4px 4px 0px $yellow;
+        }
+      }
+
+      .started {
+        background-color: $rose;
+      }
+
+      .know {
+        background-color: $white;
+      }
+
+      .get-started {
+        white-space: nowrap;
+        color: $white;
+        text-transform: uppercase;
+        font-family: Barlow;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.8px;
+        letter-spacing: 0.045em;
+      }
+      .know-more {
+        white-space: nowrap;
+        color: $black;
+        text-transform: uppercase;
+        font-family: Barlow;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.8px;
+        letter-spacing: 0.045em;
       }
     }
   }

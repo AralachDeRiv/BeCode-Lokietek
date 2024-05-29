@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Form Validation</h1>
+    <div class="container">
+      <form method="get" id="myForm">
+        <div class="field">
+          <div class="lable-input">
+            <label for="username">username :</label>
+            <input type="text" id="username" />
+          </div>
+          <p class="msg username"></p>
+        </div>
+
+        <div class="field">
+          <div class="lable-input">
+            <label for="email">email :</label>
+            <input type="text" id="email" />
+          </div>
+          <p class="msg email"></p>
+        </div>
+
+        <div class="field">
+          <div class="lable-input">
+            <label for="password">password :</label>
+            <input type="password" id="password" />
+          </div>
+          <p class="msg password"></p>
+        </div>
+
+        <div class="field">
+          <div class="lable-input">
+            <label for="password-confirmation">Confirm password :</label>
+            <input type="password" id="password-confirmation" />
+          </div>
+          <p class="msg confirmation"></p>
+        </div>
+
+        <div class="submit">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

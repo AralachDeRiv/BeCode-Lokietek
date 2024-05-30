@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "./sass/reset";
 @import "./sass/mixins";
@@ -21,6 +22,9 @@
 /*Style*/
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 1170px;
   color: $white;
   margin: 0 auto;
@@ -134,11 +138,13 @@ main {
     margin-bottom: 246px;
 
     position: relative;
+
     &::after {
       @include pseudo;
       content: url("./img/deco3.png");
       top: -15%;
       left: -20px;
+      z-index: 0;
     }
 
     &::before {
@@ -146,6 +152,7 @@ main {
       content: url("./img/deco2.png");
       bottom: -25%;
       right: 0;
+      z-index: 0;
     }
 
     h1 {
@@ -182,6 +189,7 @@ main {
       justify-content: space-between;
 
       .btn {
+        z-index: 9999;
         display: flex;
         width: 152px;
         height: 43px;
@@ -224,4 +232,184 @@ main {
       }
     }
   }
+
+  .container-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 76px;
+
+    @include ipad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-evenly;
+    }
+
+    .img {
+      max-width: 550px;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 550px;
+      padding: 60px 20px;
+      position: relative;
+
+      &::after {
+        @include pseudo;
+        content: url("./img/Ellipse1.png");
+        top: 50px;
+        left: 50%;
+      }
+
+      .deco {
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 3px;
+        color: $white-transparent;
+        margin-bottom: 16px;
+      }
+      h2 {
+        font-family: Barlow Condensed;
+        font-size: 56px;
+        font-weight: 300;
+        line-height: 64px;
+        margin-bottom: 30px;
+      }
+
+      .someTxt {
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        color: $white-transparent;
+        margin-bottom: 16px;
+      }
+
+      .btn {
+        display: flex;
+        width: 152px;
+        height: 43px;
+        border-radius: 75px;
+        padding: 13px 30px;
+        background-color: $rose;
+
+        @include transition;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        &:hover {
+          box-shadow: 0px 4px 4px 0px $yellow;
+        }
+        a {
+          white-space: nowrap;
+          text-transform: uppercase;
+          font-family: Barlow;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16.8px;
+          letter-spacing: 0.045em;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 113px;
+
+    .deco {
+      font-family: Barlow;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: 3px;
+      color: $white-transparent;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      position: relative;
+      font-family: Barlow Condensed;
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 64px;
+      margin-bottom: 32px;
+
+      &::after {
+        @include pseudo;
+        content: url("./img/deco3.png");
+        top: -75%;
+        left: -20%;
+      }
+    }
+
+    .someTxt {
+      display: block;
+      max-width: 570px;
+      padding: 0 5px;
+      font-family: Barlow;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+      color: $white-transparent;
+      margin-bottom: 70px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      flex-direction: column;
+      @include ipad {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      @include laptop {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      .card {
+        text-align: left;
+        width: 370px;
+        height: 432px;
+        background-image: $background-card-color;
+        border-radius: 15px;
+        box-shadow: 0px 24px 48px 0px #00012c28;
+
+        img {
+          margin-bottom: 38px;
+        }
+        .description {
+          margin: 0 30px;
+          font-family: Barlow Condensed;
+          font-size: 24px;
+          font-weight: 300;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+
+        .date {
+          margin: 0 30px;
+          font-family: Barlow;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 32px;
+          color: $white-transparent;
+          margin-bottom: 38px;
+        }
+      }
+    }
+  }
+}
+
+footer {
 }

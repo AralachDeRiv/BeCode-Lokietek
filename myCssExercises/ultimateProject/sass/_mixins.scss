@@ -1,4 +1,12 @@
 $ipad: 768px;
+$laptop: 1440px;
+
+@mixin laptop() {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
+
 @mixin ipad() {
   @media screen and (min-width: $ipad) {
     @content;

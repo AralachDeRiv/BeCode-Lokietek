@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal With Dialog</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+        max-width: 500px;
+        height: 200vh;
+        background-color: rgb(41, 35, 29);
+        color: aliceblue;
+      }
+
+      .no-scrolling {
+        overflow: hidden;
+      }
+
+      dialog {
+        border: none;
+        border-radius: 15px;
+        padding: 50px;
+        position: relative;
+      }
+
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.301);
+      }
+
+      img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="open">Open !</button>
+    <dialog>
+      <img class="close" src="close-o.svg" alt="close o" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ex
+        quasi nam amet quia consequatur.
+      </p>
+    </dialog>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quos
+        nihil consequuntur adipisci doloremque modi cum, autem aperiam possimus
+        natus sunt qui ea alias. Repellendus non et in voluptate nobis facere
+        adipisci dignissimos consequuntur minus magnam. Quos consequatur
+        repellat numquam voluptate earum hic facilis placeat aspernatur ipsa vel
+        nesciunt perferendis minus eius veritatis dolor, possimus a harum!
+        Quidem repellat similique officia, dolores ipsam, dicta tempora quis
+        odit quasi nam vel! Omnis, quo sunt aliquam iste amet sed hic. Velit
+        excepturi voluptate quia blanditiis totam quod temporibus ex sit facilis
+        vel illo aspernatur in nostrum, laboriosam dolores, asperiores illum
+        impedit quam. Dolor facilis sit cupiditate voluptatum vitae soluta enim
+        suscipit fugit voluptas reprehenderit? Hic aliquid excepturi vel illo
+        doloribus sunt similique nisi praesentium libero iste sequi nobis
+        laboriosam fuga, aut doloremque quisquam, magni blanditiis
+        reprehenderit! Soluta provident cum iusto dolores voluptates! Molestiae
+        nisi rem distinctio cumque similique perspiciatis corporis nesciunt
+        tenetur.
+      </p>
+    </div>
+
+    <script>
+      const openBtn = document.querySelector(".open");
+      const dialog = document.querySelector("dialog");
+      const closeBtn = document.querySelector(".close");
+
+      openBtn.addEventListener("click", () => {
+        dialog.showModal();
+        document.querySelector("body").classList.add("no-scrolling");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+        document.querySelector("body").classList.remove("no-scrolling");
+      });
+
+      dialog.addEventListener("click", (event) => {
+        const rect = dialog.getBoundingClientRect();
+        if (
+          event.clientX < rect.left ||
+          event.clientX > rect.right ||
+          event.clientY < rect.top ||
+          event.clientY > rect.bottom
+        ) {
+          dialog.close();
+          document.querySelector("body").classList.remove("no-scrolling");
+        }
+      });
+    </script>
+  </body>
+</html>

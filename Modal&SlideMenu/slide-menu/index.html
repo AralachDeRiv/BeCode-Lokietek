@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <p>Logo</p>
+      </div>
+      <div class="open-menu">
+        <img src="hamburger.svg" alt="hamburger" />
+      </div>
+
+      <ul>
+        <div class="close-menu">
+          <img src="cross.svg" alt="cross" />
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <script>
+      const openMenu = document.querySelector(".open-menu");
+      const closeMenu = document.querySelector(".close-menu");
+      const ulElement = document.querySelector("ul");
+      openMenu.addEventListener("click", () => {
+        ulElement.style.right = "0";
+      });
+      closeMenu.addEventListener("click", () => {
+        ulElement.style.right = "100%";
+      });
+    </script>
+  </body>
+</html>

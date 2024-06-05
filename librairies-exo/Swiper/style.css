@@ -1,0 +1,11 @@
+img {
+  width: 100%;
+}
+
+.swiper {
+  height: 100vh;
+}
+
+.swiper-slide {
+  width: 200px;
+}

@@ -33,4 +33,10 @@ body {
   width: 100%;
   border-radius: 45px;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.image:hover {
+  height: 105%;
+  width: 105%;
 }

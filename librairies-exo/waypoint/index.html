@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Waypoint</title>
+  </head>
+  <body>
+    <div class="section1"></div>
+    <div class="section2"></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+      integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const section1 = document.querySelector(".section1");
+      const section2 = document.querySelector(".section2");
+
+      new Waypoint({
+        element: section2,
+        handler: function (direction) {
+          console.log(direction);
+          if (direction === "down") {
+            window.alert("Are you sure ? Things are wild down there");
+          } else if (direction === "up") {
+            window.alert("I told you !");
+          }
+        },
+      });
+    </script>
+  </body>
+</html>

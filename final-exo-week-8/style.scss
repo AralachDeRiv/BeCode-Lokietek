@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Averta";
+  src: url("./font/avertademope-regular-webfont.woff") format("woff"),
+    url("./font/avertademope-regular-webfont.woff2") format("woff2");
+}
+
+@import "./sass/reset";
+@import "./sass/colors";
+@import "./sass/mixins";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  font-family: "Averta";
+  padding: 42px 40px 23px;
+  position: relative;
+  background-color: $white;
+
+  @include ipadPro {
+    padding: 42px 120px 23px;
+  }
+}
+
+@import "./sass/header";
+@import "./sass/main";

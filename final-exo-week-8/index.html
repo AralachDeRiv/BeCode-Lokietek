@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- AOS cdn -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <p class="logo"><span>A+ </span> Studio</p>
+
+      <ul class="menu-big-format">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <img src="./img/hamburger.svg" alt="" />
+      </div>
+
+      <ul class="menu-small-format">
+        <div class="cross">
+          <img src="./img/cross.svg" alt="" />
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="presentation">
+        <div class="presentation-text">
+          <h2>A Digital Product Agency</h2>
+          <p>
+            Leading digital agency with solid design and development expertise.
+            We build readymade websites, mobile applications, and elaborate
+            online business services.
+          </p>
+          <div class="btn">
+            <btn class="contact1">Contact Now</btn>
+          </div>
+        </div>
+
+        <dialog>
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text" />
+            <label for="company">Company</label>
+            <input id="company" type="text" />
+            <label for="email">Email</label>
+            <input id="email" type="text" />
+            <button>Submit</button>
+          </form>
+        </dialog>
+
+        <div class="picture-presentation">
+          <img
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            data-aos-offset="500"
+            src="./img/presentation.png"
+            alt="presentation"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- AOS cdn -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

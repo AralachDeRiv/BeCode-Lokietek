@@ -1,0 +1,96 @@
+main {
+  display: flex;
+  flex-direction: column;
+
+  .presentation {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+
+    @include ipadPro {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .presentation-text {
+      max-width: 472px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 100;
+
+      h2 {
+        @extend %h2-standard;
+        margin-bottom: 40px;
+      }
+      p {
+        @extend %p-standard;
+        margin-bottom: 26px;
+      }
+
+      .btn {
+        .contact1 {
+          @extend %btn;
+          @include transition(0.7s, ease-in);
+
+          &:hover {
+            background-color: lighten($navyBlue, 20%);
+          }
+        }
+      }
+
+      &::after {
+        @include pseudo;
+        content: url("./img/dotOrnament.png");
+        display: none;
+        width: 404px;
+        height: 154px;
+        z-index: -1;
+        bottom: -50%;
+        left: -5%;
+        @include ipadPro {
+          display: block;
+        }
+      }
+    }
+
+    .picture-presentation {
+      max-width: 70vw;
+      max-height: 512px;
+      position: relative;
+      transform: translateX(40%);
+      opacity: 0.8;
+
+      @include ipadPro {
+        transform: none;
+        max-width: 754px;
+        max-height: 512px;
+        opacity: 1;
+      }
+
+      &::before {
+        @include pseudo;
+        height: 129px;
+        width: 129px;
+        border-radius: 50%;
+        background-color: $fadeBlue;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+      &::after {
+        @include pseudo;
+        height: 178px;
+        width: 178px;
+        background-color: $fadeYellow;
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+
+        right: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+    }
+  }
+}

@@ -14,3 +14,4 @@ cross.addEventListener("click", () => {
 /*Main*/
 
 AOS.init();
+window.addEventListener("load", AOS.refresh);

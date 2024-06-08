@@ -4,10 +4,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 100px;
+
   margin-bottom: 100px;
   @include ipadPro {
     margin-bottom: 40px;
+    gap: 100px;
   }
 
   .logo {
@@ -44,7 +45,8 @@ header {
 
     position: fixed;
     z-index: 999;
-    width: 80vw;
+
+    width: 100%;
     height: 100vh;
     right: -100%;
     top: 0;

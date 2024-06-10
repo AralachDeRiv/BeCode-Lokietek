@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rainbow async</title>
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector("body");
+      const generateBG = () => Math.random() > 0.5;
+      const changeBackgroundColor = (color) => {
+        return new Promise((resolve, reject) => {
+          const bg = generateBG();
+          setTimeout(() => {
+            if (bg) {
+              body.style.backgroundColor = color;
+              resolve();
+            } else {
+              reject("OH NOOO!");
+            }
+          }, 1000);
+        });
+      };
+
+      async function rainbow() {
+        try {
+          await changeBackgroundColor("red");
+          await changeBackgroundColor("green");
+          await changeBackgroundColor("blue");
+          await changeBackgroundColor("purple");
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      rainbow();
+    </script>
+  </body>
+</html>

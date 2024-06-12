@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 *,
 *::after,
 *::before {
@@ -14,19 +16,40 @@ img {
 }
 
 body {
+  font-family: Pacifico;
+  background-color: burlywood;
   width: 100vw;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .noscroll {
   overflow: hidden;
 }
 
+header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 50px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
 .form-ingredient {
-  margin-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .meal-container {
@@ -37,31 +60,39 @@ body {
 }
 
 .card {
+  background-color: azure;
   min-width: 100px;
   max-width: 250px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   text-align: center;
-  border: 1px solid red;
+  border: 3px solid rgb(199, 137, 55);
   border-radius: 15px;
   overflow: hidden;
   padding-bottom: 20px;
 }
 
 .modal-card {
-  position: absolute;
+  display: none;
+  position: fixed;
   z-index: 100;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  max-width: 300px;
-  max-height: 300px;
-  overflow: scroll;
+
   background-color: azure;
   padding: 20px;
   border-radius: 15px;
-  display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.modal-card > #remove-modal {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 15px;
+  right: 15px;
+  color: blueviolet;
 }

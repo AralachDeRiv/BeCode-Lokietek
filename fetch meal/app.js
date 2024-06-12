@@ -3,6 +3,7 @@ const ingredientInput = document.getElementById("ingredient");
 const tempMeal = document.getElementById("meal-temp");
 const mealContainer = document.getElementById("meal-container");
 const body = document.querySelector("body");
+const modalWindow = document.querySelector(".modal-card");
 
 const getMeal = async (ingredient) => {
   const url = "https://www.themealdb.com/api/json/v1/1/filter.php?i=";
@@ -40,24 +41,18 @@ const getMealById = async (idOfMeal) => {
 
 const displayModal = (meal) => {
   body.classList.add("noscroll");
-  body.innerHTML += `
-    <div class="modal-card">
-      <h2>${meal.strMeal}</h2>
+  modalWindow.innerHTML = `<button id="remove-modal">X</button><h2>${meal.strMeal}</h2>
       <p>
         ${meal.strInstructions}
-      </p>
-    </div>`;
-
-  document.addEventListener("click", removeModal);
+      </p>`;
+  modalWindow.style.display = "flex";
+  const removeBtn = document.getElementById("remove-modal");
+  removeBtn.addEventListener("click", removeModal);
 };
 
 const removeModal = (event) => {
-  const modalWindow = document.querySelector(".modal-card");
-  const isInsideModal = modalWindow.contains(event.target);
-  if (!isInsideModal) {
-    body.removeChild(modalWindow);
-    document.removeEventListener("click", removeModal);
-  }
+  body.classList.remove("noscroll");
+  modalWindow.style.display = "none";
 };
 
 const addEventForCardMeal = () => {

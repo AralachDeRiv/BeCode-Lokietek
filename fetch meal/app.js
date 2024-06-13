@@ -39,9 +39,23 @@ const getMealById = async (idOfMeal) => {
   return data.meals[0];
 };
 
+const getIngredientsFromMeal = (meal) => {
+  return Object.entries(meal)
+    .filter((x) => x[0].indexOf("strIngredient") !== -1)
+    .filter((x) => x[1] !== "")
+    .map((x) => `<li>${x[1]}</li>`);
+};
+
 const displayModal = (meal) => {
   body.classList.add("noscroll");
-  modalWindow.innerHTML = `<button id="remove-modal">X</button><h2>${meal.strMeal}</h2>
+  let listIngredient = getIngredientsFromMeal(meal).join("");
+
+  modalWindow.innerHTML = `<button id="remove-modal">X</button>
+  <h2>${meal.strMeal}</h2>
+  <h3>Ingredient :</h3>
+      <ol>${listIngredient}
+      </ol>
+      <h3>Recept :</h3>
       <p>
         ${meal.strInstructions}
       </p>`;

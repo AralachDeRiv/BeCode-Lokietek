@@ -16,8 +16,7 @@ img {
 }
 
 body {
-  font-family: Pacifico;
-  background-color: burlywood;
+  background-color: rgb(225, 228, 179);
   width: 100vw;
   padding: 40px;
   display: flex;
@@ -38,6 +37,9 @@ header {
   padding: 50px;
   margin-bottom: 80px;
   position: relative;
+}
+h1 {
+  font-family: Pacifico;
 }
 
 .logo {
@@ -71,6 +73,11 @@ header {
   border-radius: 15px;
   overflow: hidden;
   padding-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: rotate(15deg);
 }
 
 .modal-card {
@@ -80,12 +87,27 @@ header {
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-
   background-color: azure;
   padding: 20px;
   border-radius: 15px;
   flex-direction: column;
   gap: 20px;
+  border: 1px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-card > p {
+  max-height: 250px;
+  overflow: hidden; /* Cacher la scrollbar */
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.modal-card > ol {
+  max-height: 200px;
+  overflow: hidden; /* Cacher la scrollbar */
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .modal-card > #remove-modal {
@@ -94,5 +116,12 @@ header {
   height: 25px;
   top: 15px;
   right: 15px;
-  color: blueviolet;
+  font-weight: 1000;
+  color: rgb(131, 125, 125);
+  background-color: rgb(209, 59, 59);
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-card > #remove-modal:hover {
+  background-color: rgb(153, 29, 29);
 }

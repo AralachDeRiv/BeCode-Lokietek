@@ -42,7 +42,7 @@ const getMealById = async (idOfMeal) => {
 const getIngredientsFromMeal = (meal) => {
   return Object.entries(meal)
     .filter((x) => x[0].indexOf("strIngredient") !== -1)
-    .filter((x) => x[1] !== "")
+    .filter((x) => x[1] !== "" && x[1] !== null)
     .map((x) => `<li>${x[1]}</li>`);
 };
 

@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
     <!-- AOS cdn -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header>
@@ -52,14 +57,17 @@
           </div>
         </div>
 
-        <dialog>
+        <dialog class="dialog-contact">
           <form>
-            <label for="name">Name</label>
-            <input id="name" type="text" />
-            <label for="company">Company</label>
-            <input id="company" type="text" />
-            <label for="email">Email</label>
-            <input id="email" type="text" />
+            <div class="grid-form">
+              <label for="name">Name</label>
+              <input id="name" type="text" />
+              <label for="company">Company</label>
+              <input id="company" type="text" />
+              <label for="email">Email</label>
+              <input id="email" type="text" />
+            </div>
+            <div class="error-msg"></div>
             <button>Submit</button>
           </form>
         </dialog>
@@ -73,10 +81,53 @@
           />
         </div>
       </div>
+
+      <div class="client-list">
+        <div class="description-clients">
+          <h2>Our Client</h2>
+          <p>Several selected clients, who already believe in our service.</p>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper mySwiperLogo">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/amazonLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/airbnbLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/googleLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/uberEatsLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/airbnbLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/googleLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/amazonLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/uberEatsLogo.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/airbnbLogo.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
     </main>
 
     <!-- AOS cdn -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="app.js"></script>
   </body>
 </html>

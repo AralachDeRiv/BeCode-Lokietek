@@ -25,13 +25,13 @@ img {
 }
 
 /*Standard Styling*/
-main .presentation .presentation-text h2, header ul.menu-big-format li, main .presentation .presentation-text .btn .contact1 {
+main .client-list .description-clients h2, main .presentation .presentation-text h2, header ul.menu-big-format li, main .presentation .presentation-text .btn .contact1 {
   font-size: 40px;
   font-weight: 400;
   line-height: 49.44px;
 }
 
-main .presentation .presentation-text p {
+main .client-list .description-clients p, main .presentation .presentation-text p {
   font-size: 16px;
   font-weight: 400;
   line-height: 25.6px;
@@ -179,6 +179,7 @@ main .presentation {
   justify-content: center;
   flex-direction: column;
   gap: 100px;
+  margin-bottom: 150px;
 }
 @media screen and (min-width: 1024px) {
   main .presentation {
@@ -222,6 +223,59 @@ main .presentation .presentation-text::after {
     display: block;
   }
 }
+main .presentation .dialog-contact {
+  position: absolute;
+  z-index: 998;
+  margin: 50vh auto;
+  border-radius: 15px;
+  background-color: transparent;
+  padding-bottom: 50px;
+  border: none;
+  overflow: hidden;
+}
+main .presentation .dialog-contact form {
+  opacity: 0;
+  transition: 0.7s ease;
+  padding: 45px;
+  border-radius: 15px;
+  background-color: #ffeec2;
+  position: relative;
+}
+main .presentation .dialog-contact form .grid-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 25px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin-bottom: 15px;
+}
+main .presentation .dialog-contact form .error-msg {
+  text-align: center;
+  font-weight: 500;
+}
+main .presentation .dialog-contact form .error-msg > p {
+  color: #ff007a;
+}
+main .presentation .dialog-contact form button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 16px;
+  background-color: #2639ed;
+  border: none;
+  z-index: 999;
+  color: #fefefe;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 0.4s ease;
+}
+main .presentation .dialog-contact form button:hover {
+  background-color: #0d1ba0;
+}
+main .presentation .dialog-contact::backdrop {
+  background-color: rgba(255, 247, 227, 0.4);
+}
 main .presentation .picture-presentation {
   max-width: 70vw;
   max-height: 512px;
@@ -260,4 +314,30 @@ main .presentation .picture-presentation::after {
   right: 0;
   transform: translateY(-50%);
   z-index: -1;
+}
+main .client-list {
+  display: flex;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 150px;
+}
+main .client-list .description-clients {
+  max-width: 330px;
+}
+main .client-list .description-clients h2 {
+  margin-bottom: 17px;
+}
+main .client-list .swiper {
+  max-width: 850px;
+  width: 100%;
+  height: 100%;
+}
+main .client-list .swiper-slide {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+main .client-list .swiper-slide img {
+  max-width: 150px;
+  max-height: 50px;
 }/*# sourceMappingURL=style.css.map */

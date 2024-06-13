@@ -86,6 +86,7 @@ h1 {
   z-index: 100;
   top: 50vh;
   left: 50vw;
+  max-height: 90vh;
   transform: translate(-50%, -50%);
   background-color: azure;
   padding: 20px;

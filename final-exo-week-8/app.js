@@ -66,26 +66,24 @@ dialogContact.addEventListener("submit", (e) => {
 
 // Swiper logo clients
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Configuration Swiper
-//   var swiper = new Swiper(".mySwiperLogo", {
-//     slidesPerView: 4,
-//     spaceBetween: 30,
-
-//     autoplay: {
-//       delay: 3500,
-//       disableOnInteraction: false,
-//     },
-//     loop: true,
-//   });
-// });
 var swiper = new Swiper(".mySwiperLogo", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
   },
   loop: true,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+    1440: {
+      slidesPerView: 4,
+    },
+  },
 });

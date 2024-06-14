@@ -84,6 +84,7 @@ header .logo {
   font-size: 27.15px;
   font-weight: 400;
   line-height: 33.55px;
+  margin-right: 50px;
 }
 header .logo span {
   font-size: 27.15px;
@@ -317,25 +318,59 @@ main .presentation .picture-presentation::after {
 }
 main .client-list {
   display: flex;
+  flex-direction: column;
   gap: 60px;
   align-items: end;
   margin-bottom: 150px;
 }
+@media screen and (min-width: 1024px) {
+  main .client-list {
+    flex-direction: row;
+  }
+}
 main .client-list .description-clients {
+  align-self: start;
   max-width: 330px;
 }
 main .client-list .description-clients h2 {
   margin-bottom: 17px;
 }
 main .client-list .swiper {
-  max-width: 850px;
+  max-width: 250px;
   width: 100%;
-  height: 100%;
+  height: 100px;
+}
+@media screen and (min-width: 768px) {
+  main .client-list .swiper {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .client-list .swiper {
+    transform: translateY(10px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .client-list .swiper {
+    max-width: 600px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main .client-list .swiper {
+    max-width: 850px;
+  }
 }
 main .client-list .swiper-slide {
   display: flex;
   height: 100%;
   align-items: center;
+  justify-content: center;
+}
+main .client-list .swiper-slide .amazonLogo {
+  transform: translateY(9px);
+}
+main .client-list .swiper-slide .uberEatsLogo {
+  transform: translateY(-8px);
 }
 main .client-list .swiper-slide img {
   max-width: 150px;

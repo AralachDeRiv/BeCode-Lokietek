@@ -79,6 +79,7 @@ const displayModal = (meal) => {
   modalWindow.style.display = "flex";
   const removeBtn = document.getElementById("remove-modal");
   removeBtn.addEventListener("click", removeModal);
+
   setTimeout(() => {
     modalWindow.style.opacity = 1;
     modalWindow.style.transform = "translate(-50%, -50%)";
@@ -90,6 +91,7 @@ const removeModal = (event) => {
 
   modalWindow.style.opacity = 0;
   modalWindow.style.transform = "translate(50%, -50%)";
+
   setTimeout(() => {
     modalWindow.style.display = "none";
   }, 400);

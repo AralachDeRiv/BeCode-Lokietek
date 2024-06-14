@@ -135,7 +135,7 @@ main {
         height: 129px;
         width: 129px;
         border-radius: 50%;
-        background-color: $fadeBlue;
+        background-color: darken($fadeBlue, 10%);
         transform: translateX(-50%);
         z-index: -1;
       }
@@ -157,17 +157,15 @@ main {
   .client-list {
     display: flex;
     flex-direction: column;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 250px;
 
     @include ipadPro {
       flex-direction: row;
     }
 
-    gap: 60px;
-    align-items: end;
-    margin-bottom: 150px;
-
     .description-clients {
-      // !
       align-self: start;
       max-width: 330px;
       h2 {
@@ -219,6 +217,156 @@ main {
       img {
         max-width: 150px;
         max-height: 50px;
+      }
+    }
+  }
+
+  .offers {
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      flex-direction: row;
+      gap: 90px;
+    }
+
+    align-items: center;
+    gap: 150px;
+    margin-bottom: 146px;
+
+    .descriptions-offers {
+      position: relative;
+      z-index: 100;
+      h2 {
+        max-width: 360px;
+        @extend %h2-standard;
+        margin-bottom: 30px;
+      }
+      p {
+        max-width: 390px;
+        @extend %p-standard;
+      }
+
+      &::before {
+        @include pseudo;
+        height: 178px;
+        width: 178px;
+        background-color: $fadeOrange;
+        border-top-left-radius: 50%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translate(-30%, -30%);
+      }
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+      position: relative;
+
+      @include ipad {
+        grid-template-columns: 1fr 1fr;
+        .decalage {
+          transform: translateY(-75px);
+        }
+      }
+
+      .card {
+        z-index: 100;
+        padding-top: 39px;
+        padding-bottom: 57px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 310px;
+
+        gap: 30px;
+        background-color: $whiteCard;
+        border: 1px solid $borderCard;
+        border-radius: 40px;
+
+        .icone {
+          width: 121px;
+          height: 121px;
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.blue {
+            background-color: $fadeBlue;
+          }
+
+          &.orange {
+            background-color: $fadeOrange;
+          }
+
+          &.pink {
+            background-color: $fadePink;
+          }
+
+          &.green {
+            background-color: $fadeGreen;
+          }
+
+          img {
+            width: 74px;
+            height: 74px;
+          }
+        }
+
+        h3 {
+          text-align: center;
+          @extend %h2-standard;
+          font-size: 24px;
+          line-height: 29px;
+        }
+        p {
+          text-align: center;
+          @extend %p-standard;
+        }
+      }
+
+      &::after {
+        @include pseudo;
+        content: url("./img/Group-70.png");
+        z-index: -1;
+        bottom: 65px;
+        left: -215px;
+        transform: translateX(-75%);
+      }
+      .circle-deco {
+        position: absolute;
+        z-index: -1;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border: 8px solid $flashPink;
+        bottom: 70%;
+        right: 0;
+        transform: translate(25%, -25%);
+      }
+
+      @include ipad {
+        .circle-deco {
+          bottom: 0;
+        }
+
+        &::before {
+          @include pseudo;
+
+          width: 1050px;
+          height: 620px;
+          background-color: $fadeBlue;
+          border-top-left-radius: 150px;
+          z-index: 0;
+          bottom: 100px;
+          left: -215px;
+        }
       }
     }
   }

@@ -25,16 +25,17 @@ img {
 }
 
 /*Standard Styling*/
-main .client-list .description-clients h2, main .presentation .presentation-text h2, header ul.menu-big-format li, main .presentation .presentation-text .btn .contact1 {
+main .offers .cards-container .card h3, main .offers .descriptions-offers h2, main .client-list .description-clients h2, main .presentation .presentation-text h2, header ul.menu-big-format li, main .presentation .presentation-text .btn .contact1 {
   font-size: 40px;
   font-weight: 400;
   line-height: 49.44px;
 }
 
-main .client-list .description-clients p, main .presentation .presentation-text p {
+main .offers .cards-container .card p, main .offers .descriptions-offers p, main .client-list .description-clients p, main .presentation .presentation-text p {
   font-size: 16px;
   font-weight: 400;
   line-height: 25.6px;
+  color: #757575;
 }
 
 main .presentation .presentation-text .btn .contact1 {
@@ -58,6 +59,7 @@ body {
   padding: 42px 40px 23px;
   position: relative;
   background-color: #fefefe;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 1024px) {
   body {
@@ -299,7 +301,7 @@ main .presentation .picture-presentation::before {
   height: 129px;
   width: 129px;
   border-radius: 50%;
-  background-color: #dae9ff;
+  background-color: #c1ddff;
   transform: translateX(-50%);
   z-index: -1;
 }
@@ -321,7 +323,7 @@ main .client-list {
   flex-direction: column;
   gap: 60px;
   align-items: end;
-  margin-bottom: 150px;
+  margin-bottom: 250px;
 }
 @media screen and (min-width: 1024px) {
   main .client-list {
@@ -375,4 +377,141 @@ main .client-list .swiper-slide .uberEatsLogo {
 main .client-list .swiper-slide img {
   max-width: 150px;
   max-height: 50px;
+}
+main .offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+  margin-bottom: 146px;
+}
+@media screen and (min-width: 1440px) {
+  main .offers {
+    flex-direction: row;
+    gap: 90px;
+  }
+}
+main .offers .descriptions-offers {
+  position: relative;
+  z-index: 100;
+}
+main .offers .descriptions-offers h2 {
+  max-width: 360px;
+  margin-bottom: 30px;
+}
+main .offers .descriptions-offers p {
+  max-width: 390px;
+}
+main .offers .descriptions-offers::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 178px;
+  width: 178px;
+  background-color: #fff7e3;
+  border-top-left-radius: 50%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translate(-30%, -30%);
+}
+main .offers .cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  main .offers .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  main .offers .cards-container .decalage {
+    transform: translateY(-75px);
+  }
+}
+main .offers .cards-container .card {
+  z-index: 100;
+  padding-top: 39px;
+  padding-bottom: 57px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 310px;
+  gap: 30px;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 40px;
+}
+main .offers .cards-container .card .icone {
+  width: 121px;
+  height: 121px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .offers .cards-container .card .icone.blue {
+  background-color: #f4f9ff;
+}
+main .offers .cards-container .card .icone.orange {
+  background-color: #fff7e3;
+}
+main .offers .cards-container .card .icone.pink {
+  background-color: #fff2f8;
+}
+main .offers .cards-container .card .icone.green {
+  background-color: #deffee;
+}
+main .offers .cards-container .card .icone img {
+  width: 74px;
+  height: 74px;
+}
+main .offers .cards-container .card h3 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 29px;
+}
+main .offers .cards-container .card p {
+  text-align: center;
+}
+main .offers .cards-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  content: url("./img/Group-70.png");
+  z-index: -1;
+  bottom: 65px;
+  left: -215px;
+  transform: translateX(-75%);
+}
+main .offers .cards-container .circle-deco {
+  position: absolute;
+  z-index: -1;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 8px solid #ff007a;
+  bottom: 70%;
+  right: 0;
+  transform: translate(25%, -25%);
+}
+@media screen and (min-width: 768px) {
+  main .offers .cards-container .circle-deco {
+    bottom: 0;
+  }
+  main .offers .cards-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1050px;
+    height: 620px;
+    background-color: #f4f9ff;
+    border-top-left-radius: 150px;
+    z-index: 0;
+    bottom: 100px;
+    left: -215px;
+  }
 }/*# sourceMappingURL=style.css.map */

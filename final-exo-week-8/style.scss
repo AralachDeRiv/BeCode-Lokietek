@@ -18,6 +18,7 @@ body {
   padding: 42px 40px 23px;
   position: relative;
   background-color: $white;
+  overflow-x: hidden;
 
   @include ipadPro {
     padding: 42px 120px 23px;

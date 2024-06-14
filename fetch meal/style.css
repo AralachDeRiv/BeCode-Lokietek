@@ -73,11 +73,31 @@ h1 {
   border-radius: 15px;
   overflow: hidden;
   padding-bottom: 20px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#error {
+  background-color: azure;
+  min-width: 100px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  border: 3px solid rgb(199, 137, 55);
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
 }
 
 .card:hover {
-  transform: rotate(15deg);
+  transform: rotate(15deg) !important;
 }
 
 .modal-card {
@@ -87,14 +107,16 @@ h1 {
   top: 50vh;
   left: 50vw;
   max-height: 90vh;
-  transform: translate(-50%, -50%);
   background-color: azure;
   padding: 20px;
   border-radius: 15px;
   flex-direction: column;
   gap: 20px;
   border: 1px solid black;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  opacity: 0;
+  transform: translate(50%, -50%);
 }
 
 .modal-card > p {

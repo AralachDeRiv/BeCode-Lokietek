@@ -14,14 +14,31 @@ const getMeal = async (ingredient) => {
 
 const displayMeal = (data) => {
   mealContainer.innerHTML = "";
-  data.forEach((meal) => {
-    mealContainer.innerHTML += `<div id="${meal.idMeal}" class="card meal"><img src="${meal.strMealThumb}"/><p>${meal.strMeal}</p></div>`;
+  data.forEach((meal, index) => {
+    console.log(index);
+    const mealCard = document.createElement("div");
+    mealCard.id = meal.idMeal;
+    mealCard.className = "card meal";
+    mealCard.innerHTML = `<img src="${meal.strMealThumb}"/><p>${meal.strMeal}</p>`;
+    mealContainer.appendChild(mealCard);
+
+    // for style effect
+
+    setTimeout(() => {
+      mealCard.style.opacity = 1;
+      mealCard.style.transform = "translateX(0)";
+    }, 300 * index);
   });
+
   addEventForCardMeal();
 };
 
 const displayError = (err) => {
-  mealContainer.innerHTML = `<div class="card"><img src="error.png" /><p>${err.message}</p></div>`;
+  mealContainer.innerHTML = `<div id="error"><img src="error.png" /><p>${err.message}</p></div>`;
+  const errorCard = document.getElementById("error");
+  setTimeout(() => {
+    errorCard.style.opacity = 1;
+  }, 200);
 };
 
 formIngredient.addEventListener("submit", (e) => {
@@ -62,11 +79,20 @@ const displayModal = (meal) => {
   modalWindow.style.display = "flex";
   const removeBtn = document.getElementById("remove-modal");
   removeBtn.addEventListener("click", removeModal);
+  setTimeout(() => {
+    modalWindow.style.opacity = 1;
+    modalWindow.style.transform = "translate(-50%, -50%)";
+  }, 300);
 };
 
 const removeModal = (event) => {
   body.classList.remove("noscroll");
-  modalWindow.style.display = "none";
+
+  modalWindow.style.opacity = 0;
+  modalWindow.style.transform = "translate(50%, -50%)";
+  setTimeout(() => {
+    modalWindow.style.display = "none";
+  }, 400);
 };
 
 const addEventForCardMeal = () => {

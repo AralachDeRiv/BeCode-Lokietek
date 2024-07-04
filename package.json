@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon ./Express-Router-exo/index.js"
+    "dev": "nodemon ./EJS-start/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.19.2"
   },
   "devDependencies": {

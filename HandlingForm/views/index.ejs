@@ -1,0 +1,9 @@
+<h1>List of Member</h1>
+
+<ol>
+  <% data.forEach((member) => { %>
+  <li><%= member.firstName + " "+member.lastName %></li>
+  <% }); %>
+</ol>
+
+<a href="add">Add member</a>
